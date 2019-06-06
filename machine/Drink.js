@@ -3,9 +3,7 @@ import { Segment, Card, Icon, Image, Label } from 'semantic-ui-react';
 
 class Drink extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+
 
     render() {
 
