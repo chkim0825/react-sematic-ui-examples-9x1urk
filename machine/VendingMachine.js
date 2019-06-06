@@ -45,6 +45,7 @@ class VendingMachine extends React.Component {
           price: 1000,
           quantity: 20
         },
+
       ]
     }
   }
