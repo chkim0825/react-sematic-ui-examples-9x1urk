@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Button, Segment, SegmentGroup } from 'semantic-ui-react';
 import Drink from "./Drink";
 import ExitShelf from "./ExitShelf";
-import ButtonPanel from "./ButtonPanel";
+import InputPanel from "./InputPanel";
 
 class VendingMachine extends React.Component {
 
@@ -72,7 +72,7 @@ class VendingMachine extends React.Component {
                 layout
               }
             </SegmentGroup>
-            <ButtonPanel />
+            <InputPanel />
             <SegmentGroup>
               <ExitShelf />
             </SegmentGroup>
