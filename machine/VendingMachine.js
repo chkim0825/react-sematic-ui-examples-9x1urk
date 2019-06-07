@@ -50,34 +50,45 @@ class VendingMachine extends React.Component {
     }
   }
 
+  onClickGetButton = (targetItem) => {
+    this.setState({
+      items: this.state.items.map(item => {
+        if (item.name === targetItem.name&&item.quantity>0) {
+          return { ...item, quantity: --item.quantity }
+        }
+        return item
+      })
+    })
+  }
+
   render() {
     const { items } = this.state;
     const layout = []
-    for(let i =0 ; i<items.length; i){
+    for (let i = 0; i < items.length; i) {
       layout.push(
         <SegmentGroup horizontal>
-          <Drink item={items[i++]}/>
-          <Drink item={items[i++]}/>
-          <Drink item={items[i++]}/>
-          <Drink item={items[i++]}/>
+          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
+          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
+          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
+          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
         </SegmentGroup>
       )
     }
     return (
-      
-        <SegmentGroup size='small'>
-          <Segment inverted color='blue' floated='left'>
-            <SegmentGroup vertical>
-              {
-                layout
-              }
-            </SegmentGroup>
-            <InputPanel />
-            <SegmentGroup>
-              <ExitShelf />
-            </SegmentGroup>
-          </Segment>
-        </SegmentGroup>
+
+      <SegmentGroup size='small'>
+        <Segment inverted color='blue' floated='left'>
+          <SegmentGroup vertical>
+            {
+              layout
+            }
+          </SegmentGroup>
+          <InputPanel />
+          <SegmentGroup>
+            <ExitShelf />
+          </SegmentGroup>
+        </Segment>
+      </SegmentGroup>
     )
   }
 }

@@ -11,14 +11,8 @@ class Drink extends React.Component {
     }
   }
 
-  onClickGetButton(){
-    this.props.item.quantity = this.props.item.quantity -1;
-    console.log(this.props.item.quantity);
-    console.log(this.props.item)
-  }
-
   render() {
-    const { item } = this.props;
+    const { item, onClickGetButton } = this.props;
     return (
       <Segment inverted style={{ width: 100 }}>
         <Image src={'https://i.dlpng.com/static/png/1238556-chips-chips-and-soda-png-800_800_preview.png'} size='mini' centered />
@@ -29,7 +23,7 @@ class Drink extends React.Component {
         <Card.Content extra >
           <Card.Header style={{ textAlign: 'center' }}>
             <Button size='mini' as='div' labelPosition='right'>
-              <Button size='mini' color='red' onClick={()=>this.onClickGetButton()}>GET</Button>
+              <Button size='mini' color='red' onClick={() => onClickGetButton(item)}>GET</Button>
               <Label as='a' basic color='red' pointing='left'>
                 {item.quantity}
               </Label>
