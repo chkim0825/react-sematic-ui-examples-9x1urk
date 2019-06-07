@@ -50,10 +50,10 @@ class VendingMachine extends React.Component {
     }
   }
 
-  onClickGetButton = (targetItem) => {
+  onClickGetButton = (targetItem, i) => {
     this.setState({
       items: this.state.items.map((item,index) => {
-        if (item.name === targetItem.name&&item.quantity>0) {
+        if (i === index&&item.quantity>0) {
           return { ...item, quantity: --item.quantity }
         }
         return item
