@@ -6,7 +6,7 @@ class Drink extends React.Component {
   static defaultProps = {
     item: {
       name: 'empty',
-      price: '0',
+      price: 0,
       quantity: 0
     }
   }
