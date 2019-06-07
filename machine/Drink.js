@@ -23,7 +23,7 @@ class Drink extends React.Component {
         <Card.Content extra >
           <Card.Header style={{ textAlign: 'center' }}>
             <Button size='mini' as='div' labelPosition='right'>
-              <Button size='mini' color='red' onClick={() => onClickGetButton(item, index)}>GET</Button>
+              <Button size='mini' color='red' onClick={() => onClickGetButton(index)}>GET</Button>
               <Label as='a' basic color='red' pointing='left'>
                 {item.quantity}
               </Label>
