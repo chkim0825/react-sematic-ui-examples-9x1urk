@@ -52,7 +52,7 @@ class VendingMachine extends React.Component {
 
   onClickGetButton = (targetItem) => {
     this.setState({
-      items: this.state.items.map(item => {
+      items: this.state.items.map((item,index) => {
         if (item.name === targetItem.name&&item.quantity>0) {
           return { ...item, quantity: --item.quantity }
         }
@@ -67,10 +67,10 @@ class VendingMachine extends React.Component {
     for (let i = 0; i < items.length; i) {
       layout.push(
         <SegmentGroup horizontal>
-          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
-          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
-          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
-          <Drink item={items[i++]} onClickGetButton={this.onClickGetButton} />
+          <Drink item={items[i]} onClickGetButton={this.onClickGetButton} index={i++}/>
+          <Drink item={items[i]} onClickGetButton={this.onClickGetButton} index={i++}/>
+          <Drink item={items[i]} onClickGetButton={this.onClickGetButton} index={i++}/>
+          <Drink item={items[i]} onClickGetButton={this.onClickGetButton} index={i++}/>
         </SegmentGroup>
       )
     }
